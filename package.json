@@ -5,6 +5,7 @@
   "main": "electron.js",
   "scripts": {
     "start": "electron .",
+    "test": "mocha --require babel-register './test/**/*.test.js'",
     "package-mac-os": "electron-packager . logsinaction --platform=darwin --arch=x64 --overwrite --out=dist",
     "package-linus": "electron-packager . logsinaction --platform=linus --arch=x64 --overwrite --out=dist",
     "package-windows": "electron-packager . logsinaction --platform=win32 --arch=x64 --overwrite --out=dist"
@@ -17,6 +18,7 @@
     "prettier": "^1.16.3"
   },
   "devDependencies": {
+    "babel-register": "^6.26.0",
     "chai": "^4.2.0",
     "electron": "^4.0.4",
     "electron-packager": "^13.0.1",
