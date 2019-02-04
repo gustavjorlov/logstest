@@ -1,0 +1,23 @@
+{
+  "name": "FileInAction",
+  "version": "1.0.0",
+  "description": "",
+  "main": "electron.js",
+  "scripts": {
+    "start": "electron .",
+    "package-mac-os": "electron-packager . logsinaction --platform=darwin --arch=x64",
+    "package-linus": "electron-packager . logsinaction --platform=linus --arch=x64",
+    "package-windows": "electron-packager . logsinaction --platform=win32 --arch=x64"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "eslint": "^5.12.1",
+    "prettier": "^1.16.3"
+  },
+  "devDependencies": {
+    "electron": "^4.0.4",
+    "electron-packager": "^13.0.1"
+  }
+}
