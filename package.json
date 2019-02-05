@@ -8,19 +8,22 @@
     "test": "mocha --require babel-register './test/**/*.test.js'",
     "package-mac-os": "electron-packager . logsinaction --platform=darwin --arch=x64 --overwrite --out=dist",
     "package-linus": "electron-packager . logsinaction --platform=linus --arch=x64 --overwrite --out=dist",
-    "package-windows": "electron-packager . logsinaction --platform=win32 --arch=x64 --overwrite --out=dist"
+    "package-windows": "electron-packager . logsinaction --platform=win32 --arch=x64 --overwrite --out=dist",
+    "zip": "zip -r dist.zip dist"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "eslint": "^5.12.1",
+    "jszip": "^3.1.5",
     "prettier": "^1.16.3"
   },
   "devDependencies": {
     "babel-register": "^6.26.0",
     "chai": "^4.2.0",
     "electron": "^4.0.4",
+    "electron-installer-dmg": "^2.0.0",
     "electron-packager": "^13.0.1",
     "mocha": "^5.2.0"
   }
