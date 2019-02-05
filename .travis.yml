@@ -10,7 +10,8 @@ deploy:
   api_key:
     secure: jM4LLork3EkYSbXl2CuMyKgS5tj2hsoFHU3rpMdG9wo5daYmoWzPrbQCPFPUkfWMGhr96Bme3RsTqIu6Kgc/m5yWbRaRTL0SyEmvI/6n5bhXfkEh4kcVBG758J+HGFdtGCubLnfTviib/cfAgkJ2U/dm9VrR3dLrDtYfQkM4y/rmiBuJd4JeNQVE9zBI/IkejQmrdSnlyHD2Kc9CshyCrg5wiUjTWGO/TJE/1ahps0kw9HKXkEsHn0OF5JiTSG/p2zJHDALHNrrtapzlp+DqVhbwyZNYSNGu/AfYPtUcQbvWcDSvwsEWPUewJNsZizOB2X86OvVueS14XOmn5jvs5baSQGqgxJj2AY3Z45+9ct77gTOmamXb4dcT12MyqZA49s10YHasuTE+pZ0z6Xgwivnp3wsNBeAuCSgi/zmHJjms0wbWoug/V7MXmZWandfDusoV3zwi3iLaidy2X1/KdPNjrEvNTinwbQRs2IKGwWkwax2Si+CcNvPeIFWtFohJjrIFV0VvVp0xb+0AQR2u4rGwORdeMY6WlVOTmKL7TWipVTZBSIvqmFXZez27TS+JwramMfse0TjIB9+TbNqMD/ucjIYlFRbmXJEqm7pkDlVtwXxrus1r/9FM87XUKn3/Y6wSNtyUhPXPdtOtXjrrOKcrUbvCVtc39NWG5DibKLM=
   file:
-    - dist/logsinaction-darwin-x64/logsinaction.app/
+    - dist/logsinaction-darwin-x64/logsinaction.app/*
+    - index.html
   skip_cleanup: true
   overwrite: true
   on:
