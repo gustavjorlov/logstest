@@ -1,18 +1,41 @@
 language: node_js
 node_js:
 - '8'
-os: osx
-script:
-- npm test
-- npm run package-mac-os
-- npm run zip
-deploy:
-  provider: releases
-  api_key:
-    secure: jM4LLork3EkYSbXl2CuMyKgS5tj2hsoFHU3rpMdG9wo5daYmoWzPrbQCPFPUkfWMGhr96Bme3RsTqIu6Kgc/m5yWbRaRTL0SyEmvI/6n5bhXfkEh4kcVBG758J+HGFdtGCubLnfTviib/cfAgkJ2U/dm9VrR3dLrDtYfQkM4y/rmiBuJd4JeNQVE9zBI/IkejQmrdSnlyHD2Kc9CshyCrg5wiUjTWGO/TJE/1ahps0kw9HKXkEsHn0OF5JiTSG/p2zJHDALHNrrtapzlp+DqVhbwyZNYSNGu/AfYPtUcQbvWcDSvwsEWPUewJNsZizOB2X86OvVueS14XOmn5jvs5baSQGqgxJj2AY3Z45+9ct77gTOmamXb4dcT12MyqZA49s10YHasuTE+pZ0z6Xgwivnp3wsNBeAuCSgi/zmHJjms0wbWoug/V7MXmZWandfDusoV3zwi3iLaidy2X1/KdPNjrEvNTinwbQRs2IKGwWkwax2Si+CcNvPeIFWtFohJjrIFV0VvVp0xb+0AQR2u4rGwORdeMY6WlVOTmKL7TWipVTZBSIvqmFXZez27TS+JwramMfse0TjIB9+TbNqMD/ucjIYlFRbmXJEqm7pkDlVtwXxrus1r/9FM87XUKn3/Y6wSNtyUhPXPdtOtXjrrOKcrUbvCVtc39NWG5DibKLM=
-  file:
-    - dist.zip
-  skip_cleanup: true
-  overwrite: true
-  on:
-    repo: gustavjorlov/logstest
+# os: osx
+# script:
+# - npm test
+# - npm run package-mac-os
+# - npm run zip
+# deploy:
+#   provider: releases
+#   api_key:
+#     secure: jM4LLork3EkYSbXl2CuMyKgS5tj2hsoFHU3rpMdG9wo5daYmoWzPrbQCPFPUkfWMGhr96Bme3RsTqIu6Kgc/m5yWbRaRTL0SyEmvI/6n5bhXfkEh4kcVBG758J+HGFdtGCubLnfTviib/cfAgkJ2U/dm9VrR3dLrDtYfQkM4y/rmiBuJd4JeNQVE9zBI/IkejQmrdSnlyHD2Kc9CshyCrg5wiUjTWGO/TJE/1ahps0kw9HKXkEsHn0OF5JiTSG/p2zJHDALHNrrtapzlp+DqVhbwyZNYSNGu/AfYPtUcQbvWcDSvwsEWPUewJNsZizOB2X86OvVueS14XOmn5jvs5baSQGqgxJj2AY3Z45+9ct77gTOmamXb4dcT12MyqZA49s10YHasuTE+pZ0z6Xgwivnp3wsNBeAuCSgi/zmHJjms0wbWoug/V7MXmZWandfDusoV3zwi3iLaidy2X1/KdPNjrEvNTinwbQRs2IKGwWkwax2Si+CcNvPeIFWtFohJjrIFV0VvVp0xb+0AQR2u4rGwORdeMY6WlVOTmKL7TWipVTZBSIvqmFXZez27TS+JwramMfse0TjIB9+TbNqMD/ucjIYlFRbmXJEqm7pkDlVtwXxrus1r/9FM87XUKn3/Y6wSNtyUhPXPdtOtXjrrOKcrUbvCVtc39NWG5DibKLM=
+#   file:
+#     - dist.zip
+#   skip_cleanup: true
+#   overwrite: true
+#   on:
+#     repo: gustavjorlov/logstest
+
+jobs:
+  include:
+    - stage: mac
+      os: osx
+      script:
+      - npm test
+      - npm run package-mac-os
+      - npm run zip
+      deploy:
+        provider: releases
+        api_key:
+          secure: jM4LLork3EkYSbXl2CuMyKgS5tj2hsoFHU3rpMdG9wo5daYmoWzPrbQCPFPUkfWMGhr96Bme3RsTqIu6Kgc/m5yWbRaRTL0SyEmvI/6n5bhXfkEh4kcVBG758J+HGFdtGCubLnfTviib/cfAgkJ2U/dm9VrR3dLrDtYfQkM4y/rmiBuJd4JeNQVE9zBI/IkejQmrdSnlyHD2Kc9CshyCrg5wiUjTWGO/TJE/1ahps0kw9HKXkEsHn0OF5JiTSG/p2zJHDALHNrrtapzlp+DqVhbwyZNYSNGu/AfYPtUcQbvWcDSvwsEWPUewJNsZizOB2X86OvVueS14XOmn5jvs5baSQGqgxJj2AY3Z45+9ct77gTOmamXb4dcT12MyqZA49s10YHasuTE+pZ0z6Xgwivnp3wsNBeAuCSgi/zmHJjms0wbWoug/V7MXmZWandfDusoV3zwi3iLaidy2X1/KdPNjrEvNTinwbQRs2IKGwWkwax2Si+CcNvPeIFWtFohJjrIFV0VvVp0xb+0AQR2u4rGwORdeMY6WlVOTmKL7TWipVTZBSIvqmFXZez27TS+JwramMfse0TjIB9+TbNqMD/ucjIYlFRbmXJEqm7pkDlVtwXxrus1r/9FM87XUKn3/Y6wSNtyUhPXPdtOtXjrrOKcrUbvCVtc39NWG5DibKLM=
+        file:
+          - dist.zip
+        skip_cleanup: true
+        overwrite: true
+        on:
+          repo: gustavjorlov/logstest
+    - stage: linux
+      os: linux
+      script:
+      - npm test
