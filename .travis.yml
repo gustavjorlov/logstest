@@ -20,3 +20,4 @@ deploy:
   overwrite: true
   on:
     repo: gustavjorlov/logstest
+    tags: true
