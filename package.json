@@ -10,7 +10,8 @@
     "package-linux": "electron-packager . logsinaction --platform=linux --arch=x64 --overwrite --out=dist",
     "package-windows": "electron-packager . logsinaction --platform=win32 --arch=x64 --overwrite --out=dist",
     "zip": "zip -q -r dist.zip dist",
-    "zip-linux": "zip -q -r dist-linux.zip dist"
+    "zip-linux": "zip -q -r dist-linux.zip dist",
+    "zip-windows": "zip -q -r dist-windows.zip dist"
   },
   "husky": {
     "hooks": {

@@ -4,12 +4,16 @@ node_js:
 os:
   - osx
   - linux
+  - windows
 
 script:
   - npm test
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then npm run package-mac-os; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then npm run package-linux; fi
-  - npm run zip
+  - if [[ "$TRAVIS_OS_NAME" == "windows" ]]; then npm run package-linux; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then npm run zip; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then npm run zip-linux; fi
+  - if [[ "$TRAVIS_OS_NAME" == "windows" ]]; then npm run zip-windows; fi
 deploy:
   provider: releases
   api_key:
