@@ -10,7 +10,7 @@ script:
   - npm test
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then npm run package-mac-os; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then npm run package-linux; fi
-  - if [[ "$TRAVIS_OS_NAME" == "windows" ]]; then npm run package-linux; fi
+  - if [[ "$TRAVIS_OS_NAME" == "windows" ]]; then npm run package-windows; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then npm run zip; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then npm run zip-linux; fi
   - if [[ "$TRAVIS_OS_NAME" == "windows" ]]; then npm run zip-windows; fi
